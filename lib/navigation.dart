@@ -12,7 +12,7 @@ class Navigation extends StatefulWidget {
 
 class _NavigationState extends State<Navigation> {
 
-  int currentIndex = 0;
+  int _currentIndex = 0;
 
   List<String> screenTitle = [
     'Home',
@@ -40,10 +40,10 @@ class _NavigationState extends State<Navigation> {
             label: 'Setting',
           ),
         ],
-        selectedIndex: currentIndex,
+        selectedIndex: _currentIndex,
         onDestinationSelected: (int index) {
           setState(() {
-            currentIndex = index;
+            _currentIndex = index;
           });
         },
       ),
@@ -51,7 +51,7 @@ class _NavigationState extends State<Navigation> {
         const HomePageScreen(),
         const NotesListScreen(),
         const SettingScreen()
-      ][currentIndex],
+      ][_currentIndex],
     );
   }
 }

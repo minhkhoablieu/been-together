@@ -1,3 +1,4 @@
+import 'package:been_together/features/setting/presentation/screens/widgets/date_picker.dart';
 import 'package:flutter/material.dart';
 
 class SettingScreen extends StatefulWidget {
@@ -13,6 +14,14 @@ class _SettingScreenState extends State<SettingScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Setting'),
+      ),
+      body: Container(
+        padding: const EdgeInsets.all(20),
+        child: const Column(
+          children: [
+            DatePicker()
+          ],
+        ),
       ),
     );
   }

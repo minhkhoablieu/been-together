@@ -15,4 +15,10 @@ class SettingsRepositoryImpl implements SettingsRepository {
     throw UnimplementedError();
   }
   
+  @override
+  Future<Setting?> getSettingByKey(String key) {
+    // TODO: implement getSettingByKey
+    throw UnimplementedError();
+  }
+  
 }
