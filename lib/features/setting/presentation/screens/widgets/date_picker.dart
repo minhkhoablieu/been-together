@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 
 class DatePicker extends StatefulWidget {
-  const DatePicker({super.key});
+
+  final TextEditingController controller;
+
+  const DatePicker({super.key, required this.controller});
 
   @override
   State<DatePicker> createState() => _DatePickerState();
 }
 
 class _DatePickerState extends State<DatePicker> {
-  final TextEditingController _dateController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-      controller: _dateController,
+      controller: widget.controller,
       decoration: const InputDecoration(
         labelText: 'Date',
         filled: true,
@@ -41,7 +43,7 @@ class _DatePickerState extends State<DatePicker> {
 
     if (picked != null) {
       setState(() {
-        _dateController.text = picked.toString().split(" ")[0];
+        widget.controller.text = picked.toString().split(" ")[0];
       });
     }
   }
